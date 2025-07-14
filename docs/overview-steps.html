@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.tablesorter.min.js"></script>
+<script src="js/Chart.min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" href="css/cucumber.css" type="text/css"/>
+<link rel="stylesheet" href="css/font-awesome.min.css"/>
+<link rel="shortcut icon" href="images/favicon.png"/>
+
+<script>
+$(document).ready(function() {
+    // this will tell tablesorter to try looking for the data-value attribute
+    // if present, it'll sort by that instead
+    // otherwise, it'll sort by the text content of the table cell
+    $("#tablesorter").tablesorter({
+        textAttribute: 'data-value',
+        // ignores the first row of the header, the 'scenario', 'steps', since
+        // sorting those doesn't make sense
+        selectorHeaders: '> thead tr:not(.dont-sort) th',
+        // use a stable sort
+        sortStable: true
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<title>Cucumber Reports (no 1) - Steps Overview</title>
+
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navigation">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <p class="navbar-text navbar-left">Cucumber Report</p>
+      <ul class="nav navbar-nav navbar-right">
+        <li role="presentation" ><a href="overview-features.html">Features</a></li>
+        <li role="presentation" ><a href="overview-tags.html">Tags</a></li>
+        <li role="presentation"     class="active" ><a href="overview-steps.html">Steps</a></li>
+        <li role="presentation" ><a href="overview-failures.html">Failures</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container-fluid">
+  <div class="col-md-5 col-md-offset-1">
+
+<table class="table table-bordered" id="build-info">
+  <thead>
+    <tr>
+      <th>Project</th>
+        <th>Number</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="info">
+      <td>LegalDevice</td>
+        <td>1</td>
+      <td>14 jul 2025, 14:56</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+  <div class="col-md-3 col-md-offset-2">
+  </div>
+</div>
+
+
+<div id="report-lead" class="container-fluid">
+  <div class="col-md-10 col-md-offset-1">
+    <h2>Steps Statistics</h2>
+      <p>The following graph shows step statistics for this build. Below list is based on results.
+ step does not provide information about result then is not listed below.
+ Additionally @Before and @After are not counted because they are part of the scenarios, not steps.</p>
+  </div>
+</div>
+
+<div class="container-fluid" id="report">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <table id="tablesorter" class="stats-table table-hover">
+
+        <thead>
+          <tr class="header">
+            <th>Implementation</th>
+            <th>Occurrences</th>
+            <th>Average duration</th>
+            <th>Max duration</th>
+            <th>Total durations</th>
+            <th>Ratio</th>
+          </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+              <td class="location">Definici&oacute;nPasos.Inicializador.setUp()</td>
+              <td>4</td>
+              <td class="duration" data-value="2243925">0.002</td>
+              <td class="duration" data-value="2243925">0.004</td>
+              <td class="duration" data-value="8975700">0.008</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">Definici&oacute;nPasos.Inicializador.tearDown()</td>
+              <td>4</td>
+              <td class="duration" data-value="196902425">0.196</td>
+              <td class="duration" data-value="196902425">0.215</td>
+              <td class="duration" data-value="787609700">0.787</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">Definici&oacute;nPasos.LegalDevice.coloca_en_el_recuadro_de_texto_contrase&ntilde;a_la_contrase&ntilde;a(java.lang.String)</td>
+              <td>4</td>
+              <td class="duration" data-value="118301425">0.118</td>
+              <td class="duration" data-value="118301425">0.123</td>
+              <td class="duration" data-value="473205700">0.473</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">Definici&oacute;nPasos.LegalDevice.coloca_en_el_recuadro_de_texto_correo_electr&oacute;nico_el_correo(java.lang.String)</td>
+              <td>4</td>
+              <td class="duration" data-value="599472875">0.599</td>
+              <td class="duration" data-value="599472875">1.820</td>
+              <td class="duration" data-value="2397891500">2.397</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">Definici&oacute;nPasos.LegalDevice.el_usuario_ingresa_a_legal_device()</td>
+              <td>4</td>
+              <td class="duration" data-value="2760348200">2.760</td>
+              <td class="duration" data-value="2760348200">3.656</td>
+              <td class="duration" data-value="11041392800">11.041</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">Definici&oacute;nPasos.LegalDevice.presiona_el_bot&oacute;n_iniciar_sesi&oacute;n()</td>
+              <td>4</td>
+              <td class="duration" data-value="102101050">0.102</td>
+              <td class="duration" data-value="102101050">0.104</td>
+              <td class="duration" data-value="408404200">0.408</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">Definici&oacute;nPasos.LegalDevice.se_redirecciona_a_la_p&aacute;gina_de_inicio_de_nuevo_expediente()</td>
+              <td>4</td>
+              <td class="duration" data-value="8249444100">8.249</td>
+              <td class="duration" data-value="8249444100">10.462</td>
+              <td class="duration" data-value="32997776400">32.997</td>
+              <td class="failed">25.00%</td>
+            </tr>
+        </tbody>
+
+        <tfoot class="total">
+          <tr>
+            <td>7</td>
+            <td>28</td>
+            <td class="duration">1.718</td>
+            <td class="duration">32.997</td>
+            <td class="duration">48.115</td>
+            <td>Totals</td>
+          </tr>
+        </tfoot>
+
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<nav class="navbar navbar-default" id="footer">
+  <div class="container-fluid">
+    <p class="navbar-text navbar-right">
+        <small>generate Cucumber HTML reports via:&nbsp;</small>
+        <a class="navbar-link" href="https://github.com/jenkinsci/cucumber-reports-plugin">Jenkins Plugin</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-reporting">Standalone</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-sandwich">Sandwich</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/maven-cucumber-reporting">Maven</a>
+        &nbsp;&nbsp;
+    </p>
+  </div>
+</nav>
+
+</body>
+</html>
